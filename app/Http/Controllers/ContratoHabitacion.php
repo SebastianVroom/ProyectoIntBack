@@ -3,11 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Kit;
-use App\Models\ServiciosKits;
-use App\Models\KitsContratos;
+use App\Models\contratoHabitaciones;
 
-class KitController extends Controller
+class ContratoHabitacion extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +14,7 @@ class KitController extends Controller
      */
     public function index()
     {
-        return Kit::all();
+        return contratoHabitaciones::all();
     }
 
     /**
@@ -30,7 +28,7 @@ class KitController extends Controller
         $request->validate([
 
         ]);
-        return Kit::create($request->all());
+        return contratoHabitaciones::create($request->all());
     }
 
     /**
@@ -41,7 +39,7 @@ class KitController extends Controller
      */
     public function show($id)
     {
-        return Kit::find($id);
+        return contratoHabitaciones::find($id);
     }
 
     /**
@@ -53,7 +51,7 @@ class KitController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $cita = Kit::find($id);
+        $cita = contratoHabitaciones::find($id);
         $cita->update($request->all());
         return $cita;
     }
@@ -66,6 +64,6 @@ class KitController extends Controller
      */
     public function destroy($id)
     {
-        return Kit::destroy($id);
+        return contratoHabitaciones::destroy($id);
     }
 }

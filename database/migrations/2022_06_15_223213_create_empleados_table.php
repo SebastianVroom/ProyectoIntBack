@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('DNI',20);
             $table->string('telefono',20);
             $table->primary('id');
+            $table->timestamps();
         });
     }
 

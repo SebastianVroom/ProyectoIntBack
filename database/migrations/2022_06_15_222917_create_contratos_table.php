@@ -19,6 +19,7 @@ return new class extends Migration
             $table->date('fecha_comiezo');
             $table->date('fecha_final');
             $table->unsignedBigInteger('clientesId');
+            $table->timestamps();
         });
     }
 

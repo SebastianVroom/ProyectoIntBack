@@ -44,9 +44,9 @@ return new class extends Migration
             $table->foreign('kitId')->references('id')->on('kits');
         });
 
-        Schema::table('habitaciones_kits',function(Blueprint $table){
+        Schema::table('contrato_habitaciones',function(Blueprint $table){
             $table->foreign('habitacionId')->references('id')->on('habitaciones');
-            $table->foreign('kitId')->references('id')->on('kits');
+            $table->foreign('contratoId')->references('id')->on('contratos');
         });
 
         Schema::table('empleados',function(Blueprint $table){
@@ -54,6 +54,10 @@ return new class extends Migration
         });
 
         Schema::table('clientes',function(Blueprint $table){
+            $table->foreign('id')->references('id')->on('users');
+        });
+
+        Schema::table('administradores',function(Blueprint $table){
             $table->foreign('id')->references('id')->on('users');
         });
 
@@ -96,9 +100,5 @@ return new class extends Migration
             $table->dropForeignId('kits_contratos_kitId_foreign');
         });
 
-        Schema::table('habitaciones_kits',function(Blueprint $table){
-            $table->dropForeignId('habitaciones_kits_habitacionId_foreign');
-            $table->dropForeignId('habitaciones_kits_kitId_foreign');
-        });
     }
 };

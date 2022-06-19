@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contrato;
+use Illuminate\Support\Facades\DB;
 
 class ContratoController extends Controller
 {
@@ -65,5 +66,14 @@ class ContratoController extends Controller
     public function destroy($id)
     {
         return Contrato::destroy($id);
+    }
+
+    public function getUserContratos(Request $request){
+        $user = request()->user();
+        
+        $response = DB::select(
+            'select * from habitaciones left join contrato_habitaciones on habitaciones.id = contrato_habitaciones.habitacionId left join contratos on contratoId = contratos.id where contratos.clientesId = :id',['id' => $user->id]);
+
+        return response($response);
     }
 }

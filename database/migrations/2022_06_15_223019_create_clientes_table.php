@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('clientes', function (Blueprint $table) {
             $table->unsignedBigInteger('id');
-            $table->string('telefono',20);
+            $table->string('telefono',20)->nullable();
             $table->primary('id');
+            $table->timestamps();
         });
     }
 

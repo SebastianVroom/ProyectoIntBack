@@ -19,6 +19,7 @@ return new class extends Migration
             $table->time('horaFinal');
             $table->unsignedBigInteger('servicioId');
             $table->unsignedBigInteger('responsableId');
+            $table->timestamps();
         });
     }
 

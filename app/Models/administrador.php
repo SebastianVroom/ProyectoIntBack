@@ -5,11 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class habitacionesKit extends Model
+class administrador extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'habitacionId',
-        'kitId',
+    protected $fillable=[
+        'id'
     ];
 }

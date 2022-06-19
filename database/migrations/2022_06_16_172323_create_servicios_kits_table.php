@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('kitId');
             $table->integer('numCitas');
             $table->primary(['servicioId','kitId']);
+            $table->timestamps();
         });
     }
 

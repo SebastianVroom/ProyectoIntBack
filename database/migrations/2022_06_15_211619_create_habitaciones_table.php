@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('localizacion',255);
             $table->string('tipo',100);
+            $table->timestamps();
         });
     }
 

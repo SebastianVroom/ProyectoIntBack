@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('horarioId');
             $table->date('fecha');
             $table->primary(['empleadoId','horarioId','fecha']);
+            $table->timestamps();
         });
     }
 

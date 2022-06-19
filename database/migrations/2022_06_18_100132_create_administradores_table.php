@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('habitaciones_kits', function (Blueprint $table) {
-            $table->unsignedBigInteger('habitacionId');
-            $table->unsignedBigInteger('kitId');
-            $table->primary(['habitacionId','kitId']);
+        Schema::create('administradores', function (Blueprint $table) {
+            $table->unsignedBigInteger('id');
+            $table->timestamps();
+            $table->primary('id');
         });
     }
 
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('habitaciones_kits');
+        Schema::dropIfExists('administradores');
     }
 };

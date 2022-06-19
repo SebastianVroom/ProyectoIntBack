@@ -13,13 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('citas', function (Blueprint $table) {
-            $table->id();
-            $table->date('fecha');
-            $table->time('horaComienzo');
-            $table->time('horaFinal');
-            $table->unsignedBigInteger('servicioId');
-            $table->unsignedBigInteger('responsableId');
+        Schema::create('contrato_habitaciones', function (Blueprint $table) {
+            $table->unsignedBigInteger('habitacionId');
+            $table->unsignedBigInteger('contratoId');
+            $table->primary(['habitacionId','contratoId']);
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('citas');
+        Schema::dropIfExists('contrato_habitaciones');
     }
 };
