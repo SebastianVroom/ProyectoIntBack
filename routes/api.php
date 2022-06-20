@@ -16,6 +16,7 @@ use App\Http\Controllers\ResponsableController;
 use App\Http\Controllers\ServiciosKitController;
 use App\Http\Controllers\ServiciosController;
 use App\http\Controllers\AuthController;
+use App\Http\Controllers\AdministradorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -141,6 +142,12 @@ Route::group(['middleware' => ['auth:sanctum','ability:adminToken']],function(){
     Route::post('/habitacion',[HabitacionController::class,'store']);
     Route::put('/habitacion/{id}',[HabitacionController::class,'update']);
     Route::delete('/habitacion/{id}',[HabitacionController::class,'delete']);
+
+    Route::get('/admin',[AdministradorController::class,'index']);
+    Route::get('/admin/{id}',[AdministradorController::class,'show']);
+    Route::put('/admin/{id}',[AdministradorController::class,'update']);
+    Route::post('/admin',[AdministradorController::class,'store']);
+    Route::delete('/admin/{id}',[AdministradorController::class,'delete']);
 });
 
 
